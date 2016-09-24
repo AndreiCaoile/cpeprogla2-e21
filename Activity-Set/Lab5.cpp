@@ -102,3 +102,78 @@ void Problem2(){
 		cout<<endl;
 	}
 }
+
+void Problem3(){
+	struct Name{
+		char lastname[50];
+		char firstname[50];
+	};
+	
+	struct Item{
+		int code;
+		char itemname[50];
+		float price;
+	};
+	
+	struct Date{
+		int day;
+		int month;
+		int year;
+	};
+	
+	struct Order{
+		Date date;
+		Item item[3];
+		int quantt[3];
+	};
+	
+	struct Customer{
+		Name name;
+		char contactNo[20];
+		Order order;
+	};
+	
+	void newline();
+	Customer cust[3];
+	int i,j,totprice[3];
+	cout<<fixed<<setprecision(2);
+	cout<<"Enter 3 Customers\n\n";
+	for(i=0;i<3;i++){
+		cout<<"First Name: ";
+		cin>>cust[i].name.lastname;
+		cout<<"Last Name: ";
+		cin>>cust[i].name.firstname;
+		cout<<"Contact No: ";
+		cin>>cust[i].contactNo;
+		cout<<"Order Date:\n ";
+		cout<<"Day: ";
+		cin>>cust[i].order.date.day;
+		cout<<"Month: ";
+		cin>>cust[i].order.date.month;
+		cout<<"Year: ";
+		cin>>cust[i].order.date.year;
+		cout<<"Enter 3 Items\n";
+		for(j=0;j<3;j++){
+		
+		cout<<"ID: ";
+		cin>>cust[i].order.item[j].code;
+		cout<<"Name: ";
+		cin>>cust[i].order.item[j].itemname;
+		cout<<"Price: ";
+		cin>>cust[i].order.item[j].price;
+		cout<<"Quantity: ";
+		cin>>cust[i].order.quantt[j];
+		totprice[i]+=cust[i].order.item[j].price*cust[i].order.quantt[j];
+	}
+	cout<<"\n\n";	
+	}
+	cout<<setw(5)<<"#"<<setw(30)<<"Customer Name"<<setw(15)<<"Order Date"<<setw(10)<<"Items"<<setw(8)<<"Price"<<setw(10)<<"Quantity"<<endl;
+	for(i=0;i<3;i++){
+	
+	cout<<setw(5)<<i+1<<setw(22)<<cust[i].name.lastname<<", "<<cust[i].name.firstname<<setw(15)<<cust[i].order.date.month<<"/"<<cust[i].order.date.day<<"/"<<cust[i].order.date.year<<setw(10)<<cust[i].order.item[0].price<<setw(8)<<cust[i].order.item[0].price<<setw(7)<<cust[i].order.quantt[0]<<endl;
+	for(j=1;j<3;j++){
+		cout<<setw(59)<<cust[i].order.item[j].price<<setw(8)<<cust[i].order.item[j].price<<setw(7)<<cust[i].order.quantt[j]<<endl;
+	}
+	cout<<setw(59)<<"TOTAL PRICE: "<<totprice[i]<<endl;
+	}
+}
