@@ -85,7 +85,6 @@ int len(char *t){
 char progstrrev(){
 	int l,i;
 	cout<<"\nEnter a string: ";
-	cin.ignore();
     gets(str1);
     l=strlen(str1);
     for(int i=l-1;i>=-1;i--) {
