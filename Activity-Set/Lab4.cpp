@@ -6,8 +6,9 @@ void asker();
 void progstrcmp();
 void progstrcpy();
 void progstrcat();
-int progstrlen();
+void progstrlen();
 char progstrrev();
+void reverseChar();
 
 char str1[100];
 char str2[100];
@@ -61,29 +62,39 @@ void progstrcat(){
 	}
 }
 
-int progstrlen(){
-	int s1;
+void progstrlen(){
+	int len(char *);
+	int l;
 	cout<<"\nEnter a string:  ";
-	cin.ignore();
     gets(str1);
-	while(s1!='\0') {
-		x++;
-		s1++;
-	}
-	cout<<"The length of the string is: "<<strlen(str1)+2;
-	return x;
+    l=len(str1);
+	cout<<"The value for strlen is: "<<l;
+	
 }
 
+int len(char *t){
+		int ct=0;
+    while(*t!='\0')
+    {
+        ct++;
+        t++;
+    }
+    return(ct);
+	}
+
 char progstrrev(){
+	int l,i;
 	cout<<"\nEnter a string: ";
 	cin.ignore();
     gets(str1);
-    cout<<"The reverse is: ";
-	length=strlen(str1);
-	for(int i=length;i>-1;i--) {
-		;
-}cout<<strrev(str1);
+    l=strlen(str1);
+    for(int i=l-1;i>=-1;i--) {
+		cout<<str1[i];
+	}
+    return 0;	
 }
+
+
 
 
 main(){
