@@ -63,7 +63,7 @@ void Problem2(){
 		int id;
 		char name[50];
 		int grade[3];
-		char mark[10];
+		string mark[10];
 	};
 	
 	void newline();
@@ -86,11 +86,19 @@ void Problem2(){
 			adder+=stud[i].grade[j];
 			ave[i]=adder/3;
 		}
+		
 		cout<<endl;
 	}
 	cout<<"\n\n";
 	cout<<setw(5)<<"No."<<setw(15)<<"Student No."<<setw(25)<<"Name"<<setw(20)<<"Grade"<<setw(15)<<"Remarks"<<endl;
 	for(i=0;i<5;i++){
-		cout<<setw(5)<<i<<setw(15)<<stud[i].id<<setw(25)<<stud[i].name<<setw(20)<<ave[i]<<setw(15)<<endl;
+		cout<<setw(5)<<i+1<<setw(15)<<stud[i].id<<setw(25)<<stud[i].name<<setw(20)<<ave[i]<<setw(15);
+		if(ave[i]>=75){
+			cout<<"Passed";
+		}
+		else{
+			cout<<"Failed";
+		}
+		cout<<endl;
 	}
 }
