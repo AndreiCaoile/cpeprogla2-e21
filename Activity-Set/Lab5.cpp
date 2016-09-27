@@ -13,12 +13,12 @@ main(){
 	system("pause");
 	system("cls");
 	Problem2();
-	//cout<<endl;
-	//system("pause");
-	//system("cls");
-	//Problem3();
-	//cout<<endl;
-	//system("pause");
+	cout<<endl;
+	system("pause");
+	system("cls");
+	Problem3();
+	cout<<endl;
+	system("pause");
 }
 
 void Problem1(){
